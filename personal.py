@@ -11,7 +11,7 @@ class PersonalAccount:
     def deposit(self, amount: float):
         if amount <=0:
             raise ValueError("Deposit amount should be positive.")
-        transaction = Amount(amount, datetime.now)
+        transaction = Amount(amount, "DEPOSIT")
         self.transaction.append(transaction)
         self.balance += amount
     def withdraw(self, amount: float):
