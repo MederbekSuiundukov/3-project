@@ -19,7 +19,7 @@ class PersonalAccount:
             raise ValueError("Withdraw must be positive")
         if amount > self.balance:
             raise ValueError("You have not enough balance")
-        transaction = Amount(amount,datetime.now(), "Withdrawal")
+        transaction = Amount(amount, "WITHDRAWAL")
         self.transaction.append(transaction)
         self.balance -= amount
     def print_transaction_history(self):
@@ -39,7 +39,7 @@ class PersonalAccount:
     def set_account_holder(self, account_holder: str):
         self.account_holder = account_holder
     def __str__(self):
-        return f'Account number{self.account_number}, Holder: {self.account_holder}, Balance: ${self.balance: .2f}"
+        return f'Account number{self.account_number}, Holder: {self.account_holder}, Balance: ${self.balance: .2f}'
     def __add__(self, amount: float):
         self.deposit(amount)
         return self
